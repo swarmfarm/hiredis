@@ -1,4 +1,5 @@
 libhiredis.so.0.14 libhiredis0.14 #MINVER#
+* Build-Depends-Package: libhiredis-dev
  __redisAppendCommand@Base 0.14.0
  __redisSetError@Base 0.14.0
  freeReplyObject@Base 0.14.0
