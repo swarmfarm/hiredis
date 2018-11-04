@@ -1,9 +1,10 @@
 Source: hiredis
 Priority: optional
 Maintainer: Chris Lamb <lamby@debian.org>
-Build-Depends: debhelper (>= 11),
+Build-Depends:
+ debhelper (>= 11),
+ procps <!nocheck>,
  redis-server (>= 2:2.4.2-2) [linux-any kfreebsd-any] <!nocheck>,
- procps <!nocheck>
 Standards-Version: 4.2.1
 Section: libs
 Homepage: https://github.com/redis/hiredis
@@ -12,8 +13,11 @@ Vcs-Browser: https://salsa.debian.org/lamby/pkg-hiredis
 
 Package: libhiredis0.14
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Pre-Depends:
+ ${misc:Pre-Depends},
 Multi-Arch: same
 Description: minimalistic C client library for Redis
  Hiredis is a minimalistic C client library for the Redis database. It is
@@ -36,7 +40,9 @@ Description: minimalistic C client library for Redis
 Package: libhiredis-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, libhiredis0.14 (= ${binary:Version})
+Depends:
+ libhiredis0.14 (= ${binary:Version}),
+ ${misc:Depends},
 Multi-Arch: same
 Description: minimalistic C client library for Redis (development files)
  Hiredis is a minimalistic C client library for the Redis database. It is
