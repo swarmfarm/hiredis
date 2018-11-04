@@ -1,14 +1,16 @@
-Description: Disable "returns error when the port is not open" test
- This patch disables the test "Returns error when the port is not open"
- because it is failing on some architectures (kfreebsd-* and hurd-i386).
-Origin: vendor
-Forwarded: not-needed
 From: Alessandro Ghedini <ghedo@debian.org>
-Last-Update: 2012-08-28
+Date: Sun, 4 Nov 2018 22:59:09 +0000
+Subject: _disable-failing-test
 
+---
+ test.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/test.c b/test.c
+index 0f5bfe5..89f05e1 100644
 --- a/test.c
 +++ b/test.c
-@@ -447,11 +447,11 @@
+@@ -447,11 +447,11 @@ static void test_blocking_connection_errors(void) {
           strcmp(c->errstr,"no address associated with name") == 0));
      redisFree(c);
  
