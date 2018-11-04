@@ -1,3 +1,15 @@
+hiredis (0.14.0-3) unstable; urgency=medium
+
+  * Adopt package. (See #911732)
+  * Update Vcs-Browser and Vcs-Browser.
+  * wrap-and-sort -sa.
+  * Allow test failures on mipsel64.
+  * Move to debhelper-compat virtual package and remove debian/compat.
+  * Run gbp pq import && gbp export to make subsequent changes a no-op.
+  * debian/libhiredis0.14.symbols: Add a Build-Depends-Package field.
+
+ -- Chris Lamb <lamby@debian.org>  Sun, 04 Nov 2018 23:14:09 +0000
+
 hiredis (0.14.0-2) unstable; urgency=medium
 
   * Fix silly copy/paste error in Vcs-Git/Vcs-Browser
