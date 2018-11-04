@@ -1,6 +1,6 @@
 Source: hiredis
 Priority: optional
-Maintainer: Tom Lee <debian@tomlee.co>
+Maintainer: Chris Lamb <lamby@debian.org>
 Build-Depends: debhelper (>= 11),
  redis-server (>= 2:2.4.2-2) [linux-any kfreebsd-any] <!nocheck>,
  procps <!nocheck>
