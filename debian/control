@@ -2,7 +2,7 @@ Source: hiredis
 Priority: optional
 Maintainer: Chris Lamb <lamby@debian.org>
 Build-Depends:
- debhelper-compat (= 11),
+ debhelper-compat (= 12),
  procps <!nocheck>,
  redis-server (>= 2:2.4.2-2) [linux-any kfreebsd-any] <!nocheck>,
 Standards-Version: 4.2.1
