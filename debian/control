@@ -10,6 +10,7 @@ Section: libs
 Homepage: https://github.com/redis/hiredis
 Vcs-Git: https://salsa.debian.org/lamby/pkg-hiredis.git
 Vcs-Browser: https://salsa.debian.org/lamby/pkg-hiredis
+Rules-Requires-Root: no
 
 Package: libhiredis0.14
 Architecture: any
