@@ -5,7 +5,7 @@ Build-Depends:
  debhelper-compat (= 12),
  procps <!nocheck>,
  redis-server (>= 2:2.4.2-2) [linux-any kfreebsd-any] <!nocheck>,
-Standards-Version: 4.2.1
+Standards-Version: 4.4.1
 Section: libs
 Homepage: https://github.com/redis/hiredis
 Vcs-Git: https://salsa.debian.org/lamby/pkg-hiredis.git
