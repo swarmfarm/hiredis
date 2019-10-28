@@ -32,6 +32,3 @@ ifeq ($(REDIS), 1)
 	make check || [ "$(DEB_BUILD_ARCH_OS)" = "mipsel64" ]
 endif
 endif
-
-override_dh_strip:
-	dh_strip --dbgsym-migration='libhiredis-dbg (<< 0.14.0-1~)'
