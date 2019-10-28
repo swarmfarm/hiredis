@@ -1,3 +1,16 @@
+hiredis (0.14.0-4) unstable; urgency=medium
+
+  * Drop call to --dbgsym-migration as the version is now satisfiable in the
+    current stable release.
+  * Drop versioned Build-Dependency on redis-server for version uploaded
+    in 2011.
+  * Add a gbp.conf and gitlab-ci.yml.
+  * Specify "Rules-Requires-Root: no".
+  * Bump Standards-Version to 4.4.1.
+  * Bump debhelper compatibility level to 12.
+
+ -- Chris Lamb <lamby@debian.org>  Mon, 28 Oct 2019 21:24:02 +0000
+
 hiredis (0.14.0-3) unstable; urgency=medium
 
   * Adopt package. (See #911732)
