@@ -1,3 +1,11 @@
+hiredis (0.14.0-6) UNRELEASED; urgency=medium
+
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Rely on pre-initialized dpkg-architecture variables.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Wed, 29 Jan 2020 17:03:16 +0000
+
 hiredis (0.14.0-5) unstable; urgency=medium
 
   * CVE-2020-7105: Prevent a large number of NULL pointer redeferences due to
