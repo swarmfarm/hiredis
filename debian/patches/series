@@ -4,4 +4,3 @@
 06_redis-startup.patch
 07_cmake.patch
 08_cppflags.patch
-CVE-2020-7105.patch
