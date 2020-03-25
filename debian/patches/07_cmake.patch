@@ -51,7 +51,7 @@ index 0000000..584144a
 +endif()
 +
 diff --git a/Makefile b/Makefile
-index 82a14b3..3fcf515 100644
+index 2b1865d..d149363 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -8,6 +8,8 @@ EXAMPLES=hiredis-example hiredis-example-libevent hiredis-example-libev hiredis-
@@ -75,7 +75,7 @@ index 82a14b3..3fcf515 100644
  
  # redis-server configuration used for testing
  REDIS_PORT=56379
-@@ -162,6 +166,7 @@ check: hiredis-test
+@@ -163,6 +167,7 @@ check: hiredis-test
  
  clean:
  	rm -rf $(DYLIBNAME) $(STLIBNAME) $(TESTS) $(PKGCONFNAME) examples/hiredis-example* *.o *.gcda *.gcno *.gcov
@@ -83,7 +83,7 @@ index 82a14b3..3fcf515 100644
  
  dep:
  	$(CC) -MM *.c
-@@ -181,7 +186,14 @@ $(PKGCONFNAME): hiredis.h
+@@ -182,7 +187,14 @@ $(PKGCONFNAME): hiredis.h
  	@echo Libs: -L\$${libdir} -lhiredis >> $@
  	@echo Cflags: -I\$${includedir} -D_FILE_OFFSET_BITS=64 >> $@
  
@@ -97,9 +97,9 @@ index 82a14b3..3fcf515 100644
 +
 +install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME) $(CMAKECONFNAME) $(CMAKEVERSNAME)
  	mkdir -p $(INSTALL_INCLUDE_PATH) $(INSTALL_INCLUDE_PATH)/adapters $(INSTALL_LIBRARY_PATH)
- 	$(INSTALL) hiredis.h async.h read.h sds.h $(INSTALL_INCLUDE_PATH)
+ 	$(INSTALL) hiredis.h async.h read.h sds.h alloc.h $(INSTALL_INCLUDE_PATH)
  	$(INSTALL) adapters/*.h $(INSTALL_INCLUDE_PATH)/adapters
-@@ -190,6 +202,9 @@ install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME)
+@@ -191,6 +203,9 @@ install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME)
  	$(INSTALL) $(STLIBNAME) $(INSTALL_LIBRARY_PATH)
  	mkdir -p $(INSTALL_PKGCONF_PATH)
  	$(INSTALL) $(PKGCONFNAME) $(INSTALL_PKGCONF_PATH)

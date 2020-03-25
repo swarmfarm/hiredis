@@ -7,7 +7,7 @@ Subject: _use-proper-destdir
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Makefile b/Makefile
-index b2e45f0..de6d2c5 100644
+index d1f005a..6bd6e97 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -15,7 +15,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | awk '{print $$3}')

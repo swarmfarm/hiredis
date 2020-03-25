@@ -9,7 +9,7 @@ Last-Update: 2018-09-26
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Makefile b/Makefile
-index 3fcf515..4332831 100644
+index d149363..f8a81da 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -45,7 +45,7 @@ CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev/null && echo $(CXX) || ec

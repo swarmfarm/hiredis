@@ -10,10 +10,10 @@ Subject: Fix race creating unix socket in tests.
  1 file changed, 6 insertions(+)
 
 diff --git a/Makefile b/Makefile
-index de6d2c5..82a14b3 100644
+index 6bd6e97..2b1865d 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -147,6 +147,12 @@ test: hiredis-test
+@@ -148,6 +148,12 @@ test: hiredis-test
  
  check: hiredis-test
  	@echo "$$REDIS_TEST_CONFIG" | $(REDIS_SERVER) -
