@@ -4,6 +4,10 @@ libhiredis.so.0.14 libhiredis0.14 #MINVER#
  __redisSetError@Base 0.14.0
  freeReplyObject@Base 0.14.0
  hex_digit_to_int@Base 0.14.0
+ hi_calloc@Base 0.14.1
+ hi_malloc@Base 0.14.1
+ hi_realloc@Base 0.14.1
+ hi_strdup@Base 0.14.1
  is_hex_digit@Base 0.14.0
  redisAppendCommand@Base 0.14.0
  redisAppendCommandArgv@Base 0.14.0
