@@ -1,3 +1,9 @@
+hiredis (0.14.1-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Chris Lamb <lamby@debian.org>  Wed, 25 Mar 2020 13:50:19 +0000
+
 hiredis (0.14.0-6) unstable; urgency=medium
 
   [ Debian Janitor ]
