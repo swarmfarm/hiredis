@@ -3,24 +3,26 @@ Date: Sun, 4 Nov 2018 22:59:09 +0000
 Subject: _disable-failing-test
 
 ---
- test.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ test.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/test.c b/test.c
-index 0f5bfe5..89f05e1 100644
+index c0eeca7..f6a49c7 100644
 --- a/test.c
 +++ b/test.c
-@@ -447,11 +447,11 @@ static void test_blocking_connection_errors(void) {
-          strcmp(c->errstr,"no address associated with name") == 0));
-     redisFree(c);
+@@ -664,6 +664,7 @@ static void test_blocking_connection_errors(void) {
+     }
  
--    test("Returns error when the port is not open: ");
-+    /*test("Returns error when the port is not open: ");
+ #ifndef _WIN32
++#if 0
+     test("Returns error when the port is not open: ");
      c = redisConnect((char*)"localhost", 1);
      test_cond(c->err == REDIS_ERR_IO &&
-         strcmp(c->errstr,"Connection refused") == 0);
--    redisFree(c);
-+    redisFree(c);*/
+@@ -675,6 +676,7 @@ static void test_blocking_connection_errors(void) {
+     test_cond(c->err == REDIS_ERR_IO); /* Don't care about the message... */
+     redisFree(c);
+ #endif
++#endif
+ }
  
-     test("Returns error when the unix_sock socket path doesn't accept connections: ");
-     c = redisConnectUnix((char*)"/tmp/idontexist.sock");
+ /* Dummy push handler */

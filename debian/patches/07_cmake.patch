@@ -51,19 +51,19 @@ index 0000000..584144a
 +endif()
 +
 diff --git a/Makefile b/Makefile
-index 2b1865d..d149363 100644
+index 53bab06..bb0f62b 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -8,6 +8,8 @@ EXAMPLES=hiredis-example hiredis-example-libevent hiredis-example-libev hiredis-
- TESTS=hiredis-test
- LIBNAME=libhiredis
+@@ -14,6 +14,8 @@ LIBNAME=libhiredis
  PKGCONFNAME=hiredis.pc
+ SSL_LIBNAME=libhiredis_ssl
+ SSL_PKGCONFNAME=hiredis_ssl.pc
 +CMAKECONFNAME=HiredisConfig.cmake
 +CMAKEVERSNAME=HiredisConfigVersion.cmake
  
  HIREDIS_MAJOR=$(shell grep HIREDIS_MAJOR hiredis.h | awk '{print $$3}')
  HIREDIS_MINOR=$(shell grep HIREDIS_MINOR hiredis.h | awk '{print $$3}')
-@@ -19,9 +21,11 @@ PREFIX?=$(DESTDIR)/usr
+@@ -25,9 +27,11 @@ PREFIX?=$(DESTDIR)/usr
  INCLUDE_PATH?=include/hiredis
  LIBRARY_PATH?=lib
  PKGCONF_PATH?=pkgconfig
@@ -75,17 +75,17 @@ index 2b1865d..d149363 100644
  
  # redis-server configuration used for testing
  REDIS_PORT=56379
-@@ -163,6 +167,7 @@ check: hiredis-test
+@@ -224,6 +228,7 @@ check: hiredis-test
  
  clean:
- 	rm -rf $(DYLIBNAME) $(STLIBNAME) $(TESTS) $(PKGCONFNAME) examples/hiredis-example* *.o *.gcda *.gcno *.gcov
+ 	rm -rf $(DYLIBNAME) $(STLIBNAME) $(SSL_DYLIBNAME) $(SSL_STLIBNAME) $(TESTS) $(PKGCONFNAME) examples/hiredis-example* *.o *.gcda *.gcno *.gcov
 +	rm -f $(CMAKECONFNAME) $(CMAKEVERSNAME)
  
  dep:
- 	$(CC) -MM *.c
-@@ -182,7 +187,14 @@ $(PKGCONFNAME): hiredis.h
- 	@echo Libs: -L\$${libdir} -lhiredis >> $@
- 	@echo Cflags: -I\$${includedir} -D_FILE_OFFSET_BITS=64 >> $@
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -MM *.c
+@@ -257,7 +262,14 @@ $(SSL_PKGCONFNAME): hiredis_ssl.h
+ 	@echo Libs: -L\$${libdir} -lhiredis_ssl >> $@
+ 	@echo Libs.private: -lssl -lcrypto >> $@
  
 -install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME)
 +$(CMAKECONFNAME): $(CMAKECONFNAME).in
@@ -99,7 +99,7 @@ index 2b1865d..d149363 100644
  	mkdir -p $(INSTALL_INCLUDE_PATH) $(INSTALL_INCLUDE_PATH)/adapters $(INSTALL_LIBRARY_PATH)
  	$(INSTALL) hiredis.h async.h read.h sds.h alloc.h $(INSTALL_INCLUDE_PATH)
  	$(INSTALL) adapters/*.h $(INSTALL_INCLUDE_PATH)/adapters
-@@ -191,6 +203,9 @@ install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME)
+@@ -266,6 +278,9 @@ install: $(DYLIBNAME) $(STLIBNAME) $(PKGCONFNAME)
  	$(INSTALL) $(STLIBNAME) $(INSTALL_LIBRARY_PATH)
  	mkdir -p $(INSTALL_PKGCONF_PATH)
  	$(INSTALL) $(PKGCONFNAME) $(INSTALL_PKGCONF_PATH)
@@ -107,5 +107,5 @@ index 2b1865d..d149363 100644
 +	$(INSTALL) $(CMAKECONFNAME) $(INSTALL_CMAKE_PATH)
 +	$(INSTALL) $(CMAKEVERSNAME) $(INSTALL_CMAKE_PATH)
  
- 32bit:
- 	@echo ""
+ ifeq ($(USE_SSL),1)
+ install: install-ssl
