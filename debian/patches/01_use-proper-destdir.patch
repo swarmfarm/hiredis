@@ -1,6 +1,7 @@
 From: Alessandro Ghedini <ghedo@debian.org>
 Date: Sun, 4 Nov 2018 22:59:09 +0000
 Subject: _use-proper-destdir
+Forwarded: not-needed
 
 ---
  Makefile | 2 +-
