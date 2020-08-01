@@ -1,3 +1,9 @@
+hiredis (1.0.0~rc1-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Chris Lamb <lamby@debian.org>  Sat, 01 Aug 2020 18:01:24 +0100
+
 hiredis (0.14.1-1) unstable; urgency=medium
 
   * New upstream release.
