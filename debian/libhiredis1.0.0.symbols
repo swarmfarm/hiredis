@@ -1,4 +1,4 @@
-libhiredis.so.1.0.0-rc1 libhiredis0.14 #MINVER#
+libhiredis.so.1.0.0 libhiredis1.0.0 #MINVER#
 * Build-Depends-Package: libhiredis-dev
  __redisAppendCommand@Base 1.0.0
  __redisAsyncDisconnect@Base 1.0.0
