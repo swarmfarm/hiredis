@@ -4,9 +4,8 @@ REDIS   = $(shell [ -e /usr/bin/redis-server ] && echo 1 || echo 0)
 
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 DPKG_EXPORT_BUILDFLAGS=1
-include /usr/share/dpkg/buildflags.mk
 
-include /usr/share/dpkg/architecture.mk
+include /usr/share/dpkg/default.mk
 
 %:
 	dh $@
