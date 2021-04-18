@@ -12,11 +12,11 @@ include /usr/share/dpkg/architecture.mk
 	dh $@
 
 override_dh_auto_build:
-	dh_auto_build -- DEBUG="-g" ARCH=
+	dh_auto_build -- DEBUG="-g" ARCH= USE_SSL=1
 
 override_dh_auto_install:
 	dh_auto_install -- LIBRARY_PATH="lib/$(DEB_HOST_MULTIARCH)" \
-		PREFIX=/usr
+		PREFIX=/usr USE_SSL=1
 
 override_dh_fixperms:
 	dh_fixperms

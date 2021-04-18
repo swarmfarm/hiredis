@@ -119,3 +119,11 @@ libhiredis.so.1.0.0 libhiredis1.0.0 #MINVER#
  sdstrim@Base 1.0.0
  sdsull2str@Base 1.0.0
  sdsupdatelen@Base 1.0.0
+libhiredis_ssl.so.1.0.0 libhiredis1.0.0 #MINVER#
+ redisContextSSLFuncs@Base 1.0.0
+ redisCreateSSLContext@Base 1.0.0
+ redisFreeSSLContext@Base 1.0.0
+ redisInitOpenSSL@Base 1.0.0
+ redisInitiateSSL@Base 1.0.0
+ redisInitiateSSLWithContext@Base 1.0.0
+ redisSSLContextGetError@Base 1.0.0
