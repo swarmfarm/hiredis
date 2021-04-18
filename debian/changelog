@@ -1,3 +1,14 @@
+hiredis (1.0.0-2) experimental; urgency=medium
+
+  * Build with SSL/TLS support. (Closes: #987114)
+  * Use /usr/share/dpkg/default.mk over individual 'include' lines.
+  * Use execute_after_dh_fixperms over override_dh_fixperms with explicit
+    dh_fixperms call.
+  * Bump Standards-Version to 4.5.1.
+  * Apply wrap-and-sort -sa.
+
+ -- Chris Lamb <lamby@debian.org>  Sun, 18 Apr 2021 10:48:28 +0100
+
 hiredis (1.0.0-1) experimental; urgency=medium
 
   * New upstream release, bumping SONAME.
