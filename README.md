@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/redis/hiredis.png)](https://travis-ci.org/redis/hiredis)
 
+### Lippy's notes
+**This is a packaging fork of the original repo from https://salsa.debian.org/lamby/pkg-hiredis.git - this should be primarily kept up to date with that repo**
+**However - it lives on GitLab - not GitHub - so that will be a bit of a manual process**
+**End Lippy's notes**
+
 **This Readme reflects the latest changed in the master branch. See [v1.0.0](https://github.com/redis/hiredis/tree/v1.0.0) for the Readme and documentation for the latest release ([API/ABI history](https://abi-laboratory.pro/?view=timeline&l=hiredis)).**
 
 # HIREDIS
