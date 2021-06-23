@@ -1,0 +1,4 @@
+hiredis_1.0.0-3_amd64.buildinfo libs optional
+libhiredis-dev_1.0.0-3_amd64.deb libdevel optional
+libhiredis1.0.0-dbgsym_1.0.0-3_amd64.ddeb debug optional automatic=yes
+libhiredis1.0.0_1.0.0-3_amd64.deb libs optional

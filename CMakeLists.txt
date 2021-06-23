@@ -61,10 +61,10 @@ INSTALL(TARGETS hiredis
 
 INSTALL(FILES hiredis.h read.h sds.h async.h alloc.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/hiredis)
-    
+
 INSTALL(DIRECTORY adapters
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/hiredis)
-    
+
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/hiredis.pc
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
@@ -72,7 +72,7 @@ export(EXPORT hiredis-targets
     FILE "${CMAKE_CURRENT_BINARY_DIR}/hiredis-targets.cmake"
     NAMESPACE hiredis::)
 
-SET(CMAKE_CONF_INSTALL_DIR share/hiredis)
+SET(CMAKE_CONF_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/hiredis)
 SET(INCLUDE_INSTALL_DIR include)
 include(CMakePackageConfigHelpers)
 configure_package_config_file(hiredis-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/hiredis-config.cmake
@@ -95,7 +95,7 @@ IF(ENABLE_SSL)
         ENDIF()
     ENDIF()
     FIND_PACKAGE(OpenSSL REQUIRED)
-    SET(hiredis_ssl_sources 
+    SET(hiredis_ssl_sources
         ssl.c)
     ADD_LIBRARY(hiredis_ssl SHARED
             ${hiredis_ssl_sources})
@@ -124,7 +124,7 @@ IF(ENABLE_SSL)
 
     INSTALL(FILES hiredis_ssl.h
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/hiredis)
-    
+
     INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/hiredis_ssl.pc
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
@@ -132,7 +132,7 @@ IF(ENABLE_SSL)
            FILE "${CMAKE_CURRENT_BINARY_DIR}/hiredis_ssl-targets.cmake"
            NAMESPACE hiredis::)
 
-    SET(CMAKE_CONF_INSTALL_DIR share/hiredis_ssl)
+    SET(CMAKE_CONF_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/hiredis_ssl)
     configure_package_config_file(hiredis_ssl-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/hiredis_ssl-config.cmake
                                   INSTALL_DESTINATION ${CMAKE_CONF_INSTALL_DIR}
                                   PATH_VARS INCLUDE_INSTALL_DIR)
